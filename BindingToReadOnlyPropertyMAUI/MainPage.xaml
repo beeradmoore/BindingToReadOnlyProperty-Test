@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BindingToReadOnlyPropertyMAUI"
+             x:Class="BindingToReadOnlyPropertyMAUI.MainPage"
+             x:DataType="local:MainPageModel">
+			 
+    <Grid Margin="20" VerticalOptions="Fill" ColumnDefinitions="*,*" RowDefinitions="*,*">
+        <Slider Grid.Row="0" Grid.Column="0" Minimum="0" Maximum="100" Value="{Binding MyValue}" VerticalOptions="Center" />
+        <Label Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" Text="{Binding MyValue}" />
+        <Entry x:Name="MyValueEntry" Grid.Row="1" Grid.Column="0" WidthRequest="50" HorizontalOptions="Center" VerticalOptions="Center" />
+        <Button Grid.Row="1" Grid.Column="1" Text="Set Value" Command="{Binding SetValueCommand}" CommandParameter="{x:Reference MyValueEntry}" HorizontalOptions="Center" VerticalOptions="Center"  />
+    </Grid>
+ 
+</ContentPage>
